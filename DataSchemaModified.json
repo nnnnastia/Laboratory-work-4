@@ -8,32 +8,35 @@
       "description": "Інформація про користувача",
       "properties": {
         "name": {
-          "type": "integer", 
+          "type": "string",
           "description": "Ім'я користувача",
-          "maxLength": 100
+          "maxLength": 50  
         },
         "email": {
-          "type": "string",
+          "type": "integer",  
           "description": "Електронна пошта користувача",
-          "format": "email"
+          "format": "email",
+          "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,}$"
         }
       },
-      "required": ["name", "email"]
+      "required": ["name"]  
     },
     "MotivationalMessage": {
       "type": "object",
       "description": "Мотиваційне повідомлення для користувача",
       "properties": {
         "content": {
-          "type": "integer", 
+          "type": "number",  
           "description": "Текст мотиваційного повідомлення",
           "maxLength": 500
         },
         "receiving_date": {
           "type": "string",
-          "description": "Дата отримання мотиваційного повідомлення"
+          "description": "Дата отримання мотиваційного повідомлення",
+          "format": "datetime" 
         }
-      }
+      },
+      "required": ["content"]
     },
     "PhysicalState": {
       "type": "object",
@@ -41,17 +44,13 @@
       "properties": {
         "activity": {
           "type": "string",
-          "description": "Фізична активність користувача"
+          "description": "Фізична активність користувача",
+          "maxLength": 150  
         },
         "nutrition": {
           "type": "string",
           "description": "Інформація про харчування користувача",
           "maxLength": 200
-        },
-        "wellbeing": {
-          "type": "string",
-          "description": "Загальне самопочуття користувача",
-          "maxLength": "100" 
         }
       },
       "required": ["activity", "nutrition"]
@@ -62,13 +61,16 @@
       "properties": {
         "text": {
           "type": "string",
-          "description": "Текст рекомендації"
+          "description": "Текст рекомендації",
+          "maxLength": 150  
         },
         "creation_date": {
           "type": "string",
-          "description": "Дата створення рекомендації"
+          "description": "Дата створення рекомендації",
+          "format": "date"
         }
-      }
+      },
+      "required": []  
     },
     "Application": {
       "type": "object",
@@ -76,16 +78,14 @@
       "properties": {
         "app_name": {
           "type": "string",
-          "description": "Назва додатка",
-          "maxLength": 10 
+          "description": "Назва додатка"
         },
         "version": {
           "type": "string",
           "description": "Версія додатка",
-          "pattern": "^[a-z]+$" 
+          "pattern": "^[A-Za-z]+$" 
         }
-      },
-      "required": ["app_name"]
+      }
     }
   }
 }
