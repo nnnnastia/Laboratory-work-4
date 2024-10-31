@@ -7,7 +7,7 @@
       "description": "Інформація про користувача",
       "properties": {
         "name": {
-          "type": "integer",  // Змінено тип на integer замість string
+          "type": "integer",  
           "description": "Ім'я користувача",
           "maxLength": 100
         },
@@ -32,7 +32,6 @@
         "receiving_date": {
           "type": "string",
           "description": "Дата отримання мотиваційного повідомлення"
-          // Відсутній формат "date"
         }
       },
       "required": ["content"]
@@ -68,7 +67,6 @@
           "format": "date"
         }
       }
-      // Відсутня властивість "type": "object"
     },
     "Application": {
       "type": "object",
@@ -85,7 +83,6 @@
           "pattern": "^\\d+\\.\\d+$"
         }
       }
-      // Відсутня властивість "required": ["app_name", "version"]
     }
   }
 }
