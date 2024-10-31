@@ -3,7 +3,7 @@
   "title": "Detailed Data Schema Example",
   "type": "object",
   "properties": {
-    "User": {
+    "User: {
       "type": "object",
       "description": "Інформація про користувача",
       "properties": {
@@ -55,7 +55,7 @@
         "wellbeing": {
           "type": "string",
           "description": "Загальне самопочуття користувача",
-          "maxLength": 100
+          "maxLength": 
         }
       },
       "required": ["activity", "nutrition", "wellbeing"]
