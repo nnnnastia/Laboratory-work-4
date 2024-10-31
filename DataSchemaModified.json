@@ -4,11 +4,10 @@
   "type": "object",
   "properties": {
     "User": {
-      "type": "object",
       "description": "Інформація про користувача",
       "properties": {
         "name": {
-          "type": "string",
+          "type": "integer",  // Змінено тип на integer замість string
           "description": "Ім'я користувача",
           "maxLength": 100
         },
@@ -19,7 +18,7 @@
           "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,}$"
         }
       },
-      "required": ["name"]
+      "required": ["name", "email"]
     },
     "MotivationalMessage": {
       "type": "object",
@@ -32,11 +31,11 @@
         },
         "receiving_date": {
           "type": "string",
-          "description": "Дата отримання мотиваційного повідомлення",
-          "format": "date"
+          "description": "Дата отримання мотиваційного повідомлення"
+          // Відсутній формат "date"
         }
       },
-      "required": ["content", "receiving_date"]
+      "required": ["content"]
     },
     "PhysicalState": {
       "type": "object",
@@ -51,17 +50,11 @@
           "type": "string",
           "description": "Інформація про харчування користувача",
           "maxLength": 200
-        },
-        "wellbeing": {
-          "type": "string",
-          "description": "Загальне самопочуття користувача",
-          "maxLength": 100
         }
       },
       "required": ["activity", "nutrition", "wellbeing"]
     },
     "Recommendation": {
-      "type": "object",
       "description": "Рекомендації для користувача",
       "properties": {
         "text": {
@@ -74,8 +67,8 @@
           "description": "Дата створення рекомендації",
           "format": "date"
         }
-      },
-      "required": ["text", "creation_date"]
+      }
+      // Відсутня властивість "type": "object"
     },
     "Application": {
       "type": "object",
@@ -91,8 +84,8 @@
           "description": "Версія додатка",
           "pattern": "^\\d+\\.\\d+$"
         }
-      },
-      "required": ["app_name", "version"]
+      }
+      // Відсутня властивість "required": ["app_name", "version"]
     }
   }
 }
